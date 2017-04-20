@@ -7,14 +7,15 @@ requirements:
 always_pending:
   title_regex: 'WIP'
 
-group_defaults:
-  approve_by_comment:
-    enabled: true
-    approve_regex: ^LGTM
-    reject_regex: ^Rejected
-  reset_on_push:
-    enabled: true
-  reviewers:
+groups:
+  code-review:
+    approve_by_comment:
+      approve_regex: ^Approved
+      enabled: true
+      reject_regex: ^Rejected
+    required: 1
+    reset_on_push:
+      enabled: true
     teams:
-      - isula-maintainers
-  required: 1
+    - isula-maintainers
+    
